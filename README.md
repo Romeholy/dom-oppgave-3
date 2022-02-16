@@ -1,34 +1,52 @@
 # dom-oppgave-3
 
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="index.js">
+
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Document</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="index.js">
+
 </head>
+
 <body class="blackground">
-    <h1>Find the Number, between 0 and 100</h1>
-    <h2 id="svar">Skriv et nummer</h2>
-    <form action="">
-        <input type="text" id="bt">
-        <input type="button" value="Check" onclick="number()">
-        <input type="button" value="I fell myself lucky" onclick="random()">
-    </form>
-</body>
-<script src="script.js"></script>
 
-<script>
-function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-</script>
+<h1>Find the Number, between 0 and 100</h1>
 
-    
+<h2 id="svar">Skriv et nummer</h2>
+
+<form action="">
+
+<input type="text" id="bt">
+
+<input type="button" id="btCheck" value="Check">
+
+<input type="button" value="I fell myself lucky">
+
+</form>
+
+
+
 </body>
+
+<script src="index.js"></script>
+
+
+
+
+</body>
+
 </html>
 
 
@@ -66,25 +84,35 @@ document.getElementById("submitguess2").onclick = function(){
 }
 
 
-var nummer = Math.round(Math.random()100);
-console.log(nummer)
-var lop = 1;
+var nummer = Math.round(Math.random()*100);
 
-function number() {
-javascript:
+console.log(nummer);
 
-    let ge = document.getElementById("bt").value;
 
-    if (nummer > ge) {
+
+document.getElementById('btCheck').addEventListener('click', function() {
+
+    let myinput = document.getElementById("bt").value;
+
+    if (nummer < myinput) {
+
         document.getElementById("svar").innerHTML = "Svaret er større";
-    }
-    else if (nummer < ge) {
+
+        }
+
+        else if (nummer > myinput) {
+
         document.getElementById("svar").innerHTML = "Svaret er mindre";
-    }
-    else {
+
+        }
+
+        else {
+
         document.getElementById("svar").innerHTML = "Gratulerer, du gjettet riktig";
-    }
-}
+
+        }
+
+    });
 
 function random() {
     let le = Math.round(Math.random()100);
